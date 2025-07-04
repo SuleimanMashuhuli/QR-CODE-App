@@ -10,29 +10,54 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--bg-color);
+html,body {
+    height: 100%;
+}
+
+body{
+    background-color: var(--foot-color);
     font-family: 'Courier New', Courier, monospace;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.arena {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 10%;
+    height: auto;
+    max-width: 150px;
 }
 
 .float {
     align-items: center;
     justify-content: center;
-    margin: 10%;
+    margin: 4% auto;
     padding: 40px;
     display: flex;
     flex-direction: row;
     width: auto;
-    gap: 20px;
-    background-color: var(--foot-color);
+    background-color: var(--bg-color);
     border-radius: 20px;
-    height: 100%;
 }
 
 .leftS {
-    display: flex;
+    display: grid;
     width: 100%;
     align-items: center;
+    gap: 1rem;
 }
 
 .qr-form {
@@ -44,6 +69,7 @@ body {
     width: 80%;
     padding: 40px 30px;
     margin: 0 auto;
+    place-items: center;
 }
 
 h1 {
@@ -64,6 +90,18 @@ input {
     padding: 0.7rem 0.5rem;
     border: 1px solid #d1d5db;
     font-size: 14px;
+}
+
+canvas{
+    border: 2px solid var(--primary-color);
+    width: 50%;
+    aspect-ratio: 1;
+    border-radius: 0.25rem;
+    display: block;
+    margin: 0 auto;
+}
+canvas.show{
+    visibility: visible;
 }
 
 .qr-btn {
@@ -87,5 +125,19 @@ input {
 footer {
     text-align: center;
     font-size: 12px;
-    color: var(--foot-color);
+    color: var(--primary-color);
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+@media Screen and (min-width: 30rem){
+   body{
+    height: min-content;
+    border-radius: 1rem;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+   }
 }
